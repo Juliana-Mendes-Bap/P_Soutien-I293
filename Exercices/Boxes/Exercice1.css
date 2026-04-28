@@ -1,0 +1,31 @@
+.main-box{
+    width: auto;
+    height: 250px;
+    background-color: lightgray;
+    margin-block: 20px;
+    margin-inline: auto;
+    border: 1px black solid;
+    position: relative;
+}
+.box-item{
+    width: 100px;
+    height: 100px;
+}
+:first-child.box-item{
+    background-color: blue;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+}
+:nth-child(2).box-item{
+    background-color: blueviolet;
+    top: 30%;
+    left: 50%;
+    position: absolute;
+}
+:last-child.box-item{
+    background-color: brown;
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+}

@@ -1,0 +1,28 @@
+.main-box-flex{
+    width: auto;
+    height: 250px;
+    border: 1px black solid;
+    background-color: lightgray;
+    margin-block: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.box-item-flex{
+    width: 100px;
+    height: 100px;
+    border: 1px black solid;
+}
+:first-child.box-item-flex{
+    background-color: red;
+    align-self: flex-start;   
+}
+:nth-child(2).box-item-flex{
+    background-color: yellow;
+}
+:last-child.box-item-flex{
+    background-color: green;
+    align-self: flex-end;
+}

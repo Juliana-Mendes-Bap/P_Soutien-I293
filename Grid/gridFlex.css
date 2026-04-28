@@ -1,0 +1,81 @@
+/* ====================================
+   CSS setup – ne rien modifier
+   éditer plus bas
+ * ==================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+section { min-height: 100vh; }
+div { background-color: lightgrey; }
+div:nth-of-type(5n+1) { background-color: #1abc9c; }
+div:nth-of-type(5n+2) { background-color: #3498db; }
+div:nth-of-type(5n+3) { background-color: #9b59b6; }
+div:nth-of-type(5n+4) { background-color: #e67e22; }
+div:nth-of-type(5n) { background-color: #e74c3c; }
+span { background-color: rgba(255, 255, 255, .5); border-radius: 50%; display: block; font-size: 48px; height: auto; line-height: 3em; text-align: center; width: 3em; }
+
+/* ====================================
+   éditer à partir d'ici
+ * ==================================== */
+ 
+ /* Mise en page de base (mobile) */
+ section {
+    gap: 12px;
+    padding: 12px;
+    /* ajouter le code ici */
+    display: inline-block;
+    gap: 1rem;
+ }
+
+ /* Boîtes + centrage des cercles */
+ div {
+   border-radius: 8px;
+   /* ajouter le code ici */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ /* Le bloc #5 plus haut */
+ section>div:nth-child(5) {
+    height: auto;
+}
+
+ /* Palier tablette : 2 colonnes, #5 sur toute la ligne */
+ @media screen and (min-width: 600px) {
+  /* ajouter le code ici */
+  section{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  section>div:nth-child(5){
+    flex-basis: 100%;
+  }
+  div{
+    flex-basis: 49.14%;
+  }
+ }
+
+ /* Palier desktop : 4 colonnes (≥1024px), #5 sur toute la ligne */
+ @media screen and (min-width: 1024px) {
+  /* ajouter le code ici */
+  section{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  section>div:nth-child(5){
+    flex-basis: 100%;
+  }
+  div{
+    flex-basis: 24.24%;
+  }
+ }

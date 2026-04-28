@@ -1,0 +1,255 @@
+/* ====================================
+   CSS setup – ne rien modifier
+   éditer plus bas
+ * ==================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+section { min-height: 100vh; }
+div { background-color: lightgrey; }
+div:nth-of-type(5n+1) { background-color: #1abc9c; }
+div:nth-of-type(5n+2) { background-color: #3498db; }
+div:nth-of-type(5n+3) { background-color: #9b59b6; }
+div:nth-of-type(5n+4) { background-color: #e67e22; }
+div:nth-of-type(5n) { background-color: #e74c3c; }
+span { background-color: rgba(255, 255, 255, .5); border-radius: 50%; display: block; font-size: 48px; height: auto; line-height: 3em; text-align: center; width: 3em; }
+
+/* ====================================
+   éditer à partir d'ici
+ * ==================================== */
+ 
+ /* Mise en page de base (mobile) */
+ section {
+   gap: 12px;
+   padding: 12px;
+   /* ajouter le code ici */
+    display: grid;
+    gap: 1rem;
+ }
+
+ /* Boîtes + centrage des cercles */
+ div {
+   border-radius: 8px;
+   /* ajouter le code ici */
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ /* Le bloc #5 plus haut */
+ section>div:nth-child(5) {
+  height: auto;
+}
+
+ /* Palier tablette : 2 colonnes, #5 sur toute la ligne */
+ @media screen and (min-width: 600px) {
+  /* ajouter le code ici */
+  section{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  section>div:nth-child(5){
+    grid-column: span 2;
+  }
+ }
+
+ /* Palier desktop : 4 colonnes (≥1024px), #5 sur toute la ligne */
+ @media screen and (min-width: 1024px) {
+  /* ajouter le code ici */
+  section{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  section>div:nth-child(5){
+    grid-column: span 4;
+  }
+ }
+
+body {
+  margin: 0px;
+}
+.wrapper {
+  background-color: #fff;
+  color: #444;
+}
+header .hamburger {
+  display: block;
+}
+header nav {
+  display: none;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: .5em;
+  grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer"
+}
+
+header,
+nav {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 2.4rem; 
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #999;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    grid-area: nav;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li:hover {
+  background-color: #999;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ececec;
+  color: black;
+  display: inline-block;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  background-color: #999;
+}
+
+
+@media only screen and (min-width: 680px)  {
+	.wrapper {
+
+		grid-template-columns: 150px auto;
+		grid-template-areas:
+    "header header header"
+		"main    main main"
+		"aside  aside aside"
+		"footer footer footer";
+	}
+}
+@media only screen and (min-width: 820px) {
+  header .hamburger {
+    display: none;
+  }
+  header nav {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1024px)   {
+  .wrapper {
+    grid-gap: 1em;
+    grid-template-columns: 300px auto 200px;
+    grid-template-areas:
+      "header header header"
+      "main   main aside"
+      "footer footer footer";
+    max-width: 100%;
+  }
+}
+
+
+/* hamburger menu */
+.hamburger {
+  margin: 0;
+  margin-left: 15px;
+  padding: 0;
+  float: left;
+  transition: opacity .3s;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.hamburger .line{
+  width: 50px;
+  height: 5px;
+  background: #ccc;
+  margin: 8px auto;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.hamburger .line:nth-child(1),
+.hamburger .line:nth-child(3){
+  background-color: #ececec;
+}
+
+.hamburger .line:nth-child(2) {
+  background-color: #ccc;
+}
+
+.hamburger.isactive .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.isactive .line:nth-child(1) {
+  transform: translateY(13px) rotate(45deg);
+}
+
+.hamburger.isactive .line:nth-child(3) {
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+header nav {
+  transition: all 2s ease-in-out;
+}
+
+header nav.active {
+  display: block;
+  animation: fade .5s;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 240px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+header nav.active ul {
+  flex-direction: column;
+}
+
+@keyframes fade {
+  from{transform: translateX(-200px); opacity: 0;}
+  to {transform: translateX(0px); opacity: 1;}
+}
+
+
+

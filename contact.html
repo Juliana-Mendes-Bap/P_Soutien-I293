@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Contact</title>
+</head>
+<body>
+    <header id="autreHeader-id">
+        <h1>Contactez-nous</h1>
+        <a href="index.html">Accueil</a>
+    </header>
+    <p>Utilisez ce formulaire pour commander des chats ou pour nous envoyer un message.</p>
+    <form action="contact.html" method="post">
+        <label for="nom-id">Nom</label>
+        <input type="text" id="nom-id" name="Nom" required maxlength="32">
+        <br>
+        <label for="prenom-id">Prénom</label>
+        <input type="text" id="prenom-id" name="Prenom" required>
+        <br>
+        <label for="adresse-id" required>Adresse</label>
+        <input type="text" id="adresse-id" name="Adresse" required>
+        <br>
+        <label for="lieu-id">Lieu</label>
+        <input type="text" id="lieu-id" name="Lieu" required>
+        <br>
+        <label for="npa-id">NPA</label>
+        <input type="text" id="npa-id" name="NPA" required>
+        <fieldset>
+            <legend>Votre commande</legend>
+            <div>
+                <p>Race de chat désirée</p>
+                <input type="checkbox" name="Mainecoon" value="MaineCoon"> Maine coon
+                <input type="checkbox" name="Persian" value="Persian"> Persian
+                <input type="checkbox" name="Sphynx" value="Sphynx"> Sphynx
+                <br>
+                <br>
+                <label for="quantite-id">Quantité * </label>
+                <select name="quantite" id="quantite-id">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <br>
+            <fieldset>
+                <legend>Mode de payement</legend>
+                <div>
+                    <input type="radio" name="Carte" value="ParCarte"> Par carte
+                    <input type="radio" name="Paypal" value="Paypal"> Paypal
+                    <input type="radio" name="Livraison" value="Livraison"> À payer à livraison
+                </div>
+            </fieldset>
+        </fieldset>
+        <br>
+        <label for="message-id">Message</label>
+        <textarea name="message" id="message-id" rows=""></textarea>
+        <br>
+        <br>
+        <input type="checkbox" name="conditions" id="conditions-ID*" required> J'accepte les conditions générales *
+        <br>
+        <br>
+        <button type="submit">Envoyer</button>
+    </form>
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <a href="mentions-legales.html" target="_blank">Mentions Légales</a>
+                </li>
+                <li>
+                    <a href="contact.html" target="_blank">Contact</a>
+                </li>
+                <li>
+                    <a href="https://enseignement.section-inf.ch/moduleICT/293/" target="_blank">Teaching</a>
+                </li>
+                <li>
+                    <a href="mailto:pu81umy@eduvaud.ch" target="_blank">mon-email.@eduvaud.ch</a>
+                </li>
+            </ul>
+            <!-- alt 0169 = © -->
+            <p>© 2026 - Tous droits réservés</p>
+        </nav>
+    </footer>
+</body>
+</html>
